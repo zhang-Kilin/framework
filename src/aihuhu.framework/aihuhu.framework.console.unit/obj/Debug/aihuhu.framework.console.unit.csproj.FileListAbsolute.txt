@@ -1,0 +1,15 @@
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\Configuration\Commands\UserCommand.config
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\Configuration\Database.config
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\Configuration\DataCommndFileList.config
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\aihuhu.framework.console.unit.exe.config
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\aihuhu.framework.console.unit.exe
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\aihuhu.framework.console.unit.pdb
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\aihuhu.framework.data.dll
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\aihuhu.framework.dll
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\aihuhu.framework.data.pdb
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\aihuhu.framework.pdb
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\obj\Debug\aihuhu.framework.console.unit.csprojResolveAssemblyReference.cache
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\obj\Debug\aihuhu.framework.console.unit.exe
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\obj\Debug\aihuhu.framework.console.unit.pdb
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\aihuhu.framework.data.orm.dll
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.console.unit\bin\Debug\aihuhu.framework.data.orm.pdb

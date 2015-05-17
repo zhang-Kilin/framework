@@ -1,0 +1,6 @@
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework\bin\Debug\aihuhu.framework.dll
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework\bin\Debug\aihuhu.framework.pdb
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework\obj\Debug\aihuhu.framework.Properties.framework.resources
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework\obj\Debug\aihuhu.framework.csproj.GenerateResource.Cache
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework\obj\Debug\aihuhu.framework.dll
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework\obj\Debug\aihuhu.framework.pdb

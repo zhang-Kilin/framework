@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5ECC33A7-94A7-434F-9F51-3BE587B51B9D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>aihuhu.framework.data</RootNamespace>
+    <AssemblyName>aihuhu.framework.data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\CommandConfiguration\CommandConfiguration.cs" />
+    <Compile Include="Configuration\CommandConfiguration\CommandConfigurationCollection.cs" />
+    <Compile Include="Configuration\CommandConfiguration\CommandFileConfiguration.cs" />
+    <Compile Include="Configuration\CommandConfiguration\CommandFileListConfiguration.cs" />
+    <Compile Include="Configuration\CommandConfiguration\ParameterConfiguration.cs" />
+    <Compile Include="Configuration\DatabaseConfigurationElement.cs" />
+    <Compile Include="Configuration\DatabaseConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\DatabaseConfigurationSection.cs" />
+    <Compile Include="Configuration\DatabaseProviderEnum.cs" />
+    <Compile Include="Configuration\Exports\Command.cs" />
+    <Compile Include="Configuration\Exports\CommandConfigurationManager.cs" />
+    <Compile Include="Configuration\Exports\Database.cs" />
+    <Compile Include="Configuration\Exports\DatabaseFileWatcher.cs" />
+    <Compile Include="Configuration\Exports\FrameworkDataConfigurationSection.cs" />
+    <Compile Include="Configuration\Exports\Parameter.cs" />
+    <Compile Include="Configuration\Exports\ParameterCollection.cs" />
+    <Compile Include="DataCommand.cs" />
+    <Compile Include="DataCommandManager.cs" />
+    <Compile Include="IDataCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aihuhu.framework\aihuhu.framework.csproj">
+      <Project>{72d1167a-f684-4091-92a0-f22af1c060e9}</Project>
+      <Name>aihuhu.framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

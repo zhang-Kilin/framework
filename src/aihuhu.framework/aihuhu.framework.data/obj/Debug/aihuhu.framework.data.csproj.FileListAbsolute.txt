@@ -1,0 +1,7 @@
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.data\bin\Debug\aihuhu.framework.data.dll
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.data\bin\Debug\aihuhu.framework.data.pdb
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.data\bin\Debug\aihuhu.framework.dll
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.data\bin\Debug\aihuhu.framework.pdb
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.data\obj\Debug\aihuhu.framework.data.csprojResolveAssemblyReference.cache
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.data\obj\Debug\aihuhu.framework.data.dll
+F:\projects\git\myframework\src\aihuhu.framework\aihuhu.framework.data\obj\Debug\aihuhu.framework.data.pdb
