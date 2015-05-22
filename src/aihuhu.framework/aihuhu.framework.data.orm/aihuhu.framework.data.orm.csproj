@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,11 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collection.cs" />
     <Compile Include="ColumnNameAttribute.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="ExtendCommand.cs" />
+    <Compile Include="Internal\PropertyWriter.cs" />
+    <Compile Include="Internal\SqlBuilder.cs" />
+    <Compile Include="IQuery.cs" />
+    <Compile Include="ISave.cs" />
+    <Compile Include="ModelBase.cs" />
+    <Compile Include="ModelExtend.cs" />
     <Compile Include="OrmMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyCacheManager.cs" />
+    <Compile Include="Internal\PropertyCacheManager.cs" />
     <Compile Include="TableAttribute.cs" />
   </ItemGroup>
   <ItemGroup>

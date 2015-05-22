@@ -19,7 +19,7 @@ namespace aihuhu.framework.console.unit.data.configuration
             filePath = FileHelper.RootPath(filePath);
             ExeConfigurationFileMap map = new ExeConfigurationFileMap();
             map.ExeConfigFilename = filePath;
-           Configuration config =  ConfigurationManager.OpenMappedExeConfiguration(map, ConfigurationUserLevel.None);
+           System.Configuration.Configuration config =  ConfigurationManager.OpenMappedExeConfiguration(map, ConfigurationUserLevel.None);
            DatabaseConfigurationSection section = (DatabaseConfigurationSection) config.GetSection("database");
            DatabaseConfigurationElement element = section.DatabaseCollection["myframework"];
            if (element.Provider != DatabaseProviderEnum.sql)

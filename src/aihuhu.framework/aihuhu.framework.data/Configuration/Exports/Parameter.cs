@@ -22,7 +22,7 @@ namespace aihuhu.framework.data.Configuration.Exports
             }
         }
 
-        public DbType DbType
+        public DbType? DbType
         {
             get;
             internal set;

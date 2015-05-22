@@ -53,5 +53,27 @@ namespace aihuhu.framework.Utility
             }
             return Path.Combine(basePath, relativeFilePath);
         }
+
+        /// <summary>
+        /// 判断expectPath是否为path的子目录
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="expectPath"></param>
+        /// <returns></returns>
+        public static bool Contains(string path, string expectPath)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                throw new ArgumentNullException("path");
+            }
+            if (string.IsNullOrWhiteSpace(expectPath))
+            {
+                throw new ArgumentNullException("expectPath");
+            }
+            path = path.Replace('/', '\\').ToLower();
+            expectPath = expectPath.Replace('/', '\\').ToLower();
+            string p = expectPath.Replace(path, "");
+            return p == expectPath;
+        }
     }
 }

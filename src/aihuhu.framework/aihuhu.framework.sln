@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aihuhu.framework.data", "ai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aihuhu.framework.data.orm", "aihuhu.framework.data.orm\aihuhu.framework.data.orm.csproj", "{4D9D24B2-CC20-454B-8FC9-6CFF3A74A750}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aihuhu.framework.web", "aihuhu.framework.web\aihuhu.framework.web.csproj", "{FF2BC411-5B53-4F55-8D85-F097DDD1CA5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aihuhu.framework.admin", "aihuhu.framework.admin\aihuhu.framework.admin.csproj", "{24630CD1-18E4-4313-B1C5-D81BC6A37BC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{4D9D24B2-CC20-454B-8FC9-6CFF3A74A750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D9D24B2-CC20-454B-8FC9-6CFF3A74A750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D9D24B2-CC20-454B-8FC9-6CFF3A74A750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF2BC411-5B53-4F55-8D85-F097DDD1CA5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF2BC411-5B53-4F55-8D85-F097DDD1CA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF2BC411-5B53-4F55-8D85-F097DDD1CA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF2BC411-5B53-4F55-8D85-F097DDD1CA5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24630CD1-18E4-4313-B1C5-D81BC6A37BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24630CD1-18E4-4313-B1C5-D81BC6A37BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24630CD1-18E4-4313-B1C5-D81BC6A37BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24630CD1-18E4-4313-B1C5-D81BC6A37BC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

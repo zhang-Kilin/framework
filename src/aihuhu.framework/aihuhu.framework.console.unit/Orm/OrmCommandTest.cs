@@ -17,7 +17,7 @@ namespace aihuhu.framework.console.unit.Orm
         [MethodTest]
         public void CommandTest()
         {
-            DataCommand command = DataCommand.Create("UserCommand.QueryUserByUserName");
+            IDataCommand command = DataCommand.Create("UserCommand.QueryUserByUserName");
             command.SetParameterValue("UserName", "admin");
             Stopwatch watch = new Stopwatch();
             watch.Start();
@@ -29,10 +29,28 @@ namespace aihuhu.framework.console.unit.Orm
         [MethodTest]
         public void CommandTest1()
         {
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 10; i++)
             {
                 CommandTest();
             }
+        }
+
+        [MethodTest]
+        public void ContextTest()
+        {
+            Context context = new Context("myframework");
+            Collection<UserEntity> collection = new Collection<UserEntity>();
+            UserEntity u = collection.New();
+            u.CreateTime = DateTime.Now;
+            u.CreateUser = "system";
+            u.NickName = "Kilin";
+            u.Password = "456123";
+            u.Status = UserStatus.Disabled;
+            u.UserName = "Kilin";
+            u.HashCode = "987456783";
+            context.Save<UserEntity>(collection);
+
+            Console.WriteLine("UserId:" + u.UserId);
         }
     }
 }

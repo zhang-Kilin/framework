@@ -10,7 +10,7 @@ namespace aihuhu.framework.data.orm
 {
     public static class ExtendCommand
     {
-        public static IList<T> ExecuteList<T>(this DataCommand command)
+        public static IList<T> ExecuteList<T>(this IDataCommand command)
         {
             IList<T> results = new List<T>();
             using (IDataReader reader = command.ExecuteReader())
@@ -24,7 +24,7 @@ namespace aihuhu.framework.data.orm
             return results;
         }
 
-        public static T ExecuteEntity<T>(this DataCommand command)
+        public static T ExecuteEntity<T>(this IDataCommand command)
         {
             T result = default(T);
             using (IDataReader reader = command.ExecuteReader())

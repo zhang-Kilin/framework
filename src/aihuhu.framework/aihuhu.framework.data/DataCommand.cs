@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace aihuhu.framework.data
 {
-    public class DataCommand : IDataCommand
+    public sealed class DataCommand : IDataCommand
     {
         private Command m_CommandConfiguration = null;
         private Database m_DatabaseConfiguration = null;
@@ -37,20 +37,38 @@ namespace aihuhu.framework.data
 
         public int CommandTimeout
         {
-            get;
-            set;
+            get
+            {
+                return this.m_CommandConfiguration.CommandTimeout;
+            }
+            set
+            {
+                this.m_CommandConfiguration.CommandTimeout = value;
+            }
         }
 
         public string CommandText
         {
-            get;
-            set;
+            get
+            {
+                return this.m_CommandConfiguration.CommandText;
+            }
+            set
+            {
+                this.m_CommandConfiguration.CommandText = value;
+            }
         }
 
         public CommandType CommandType
         {
-            get;
-            set;
+            get
+            {
+                return this.m_CommandConfiguration.CommandType;
+            }
+            set
+            {
+                this.m_CommandConfiguration.CommandType = value;
+            }
         }
 
         public int ExecuteNonQuery()
@@ -85,6 +103,18 @@ namespace aihuhu.framework.data
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             return ds;
+        }
+
+
+        public void AddInParameter(string name, object value)
+        {
+            Parameter parameter = new Parameter
+            {
+                Name = name,
+                Direction = ParameterDirection.Input,
+                Value = value
+            };
+            this.m_CommandConfiguration.Parameters.Add(parameter.Name, parameter);
         }
 
         public void AddInParameter(string name, DbType dbType)
@@ -240,6 +270,17 @@ namespace aihuhu.framework.data
             return this.m_CommandConfiguration.Parameters[name].Value;
         }
 
+        public void RemoveParameter(string name)
+        {
+            name = DataCommandManager.FormatParameterName(name);
+            this.m_CommandConfiguration.Parameters.Remove(name);
+        }
+
+        public void ClearParameter()
+        {
+            this.m_CommandConfiguration.Parameters.Clear();
+        }
+
         public void Dispose()
         {
             if (this.m_CurrentCommand != null)
@@ -248,17 +289,29 @@ namespace aihuhu.framework.data
             }
         }
 
-        public static DataCommand Create(string commandName)
+        public static IDataCommand Create(string commandName)
         {
             Command command = CommandConfigurationManager.GetCommand(commandName);
             return new DataCommand(command);
         }
 
-        public static DataCommand CreateCustomCommand(string database)
+        public static IDataCommand CreateCustomCommand(string database)
         {
             Database db = CommandConfigurationManager.GetDatabase(database);
             return new DataCommand(db);
         }
+
+        public IDataCommand Clone()
+        {
+            Command cmd = (Command)this.m_CommandConfiguration.Clone();
+            return new DataCommand(cmd);
+        }
+
+        object ICloneable.Clone()
+        {
+            return this.Clone();
+        }
+
 
         private void RefreshParameters()
         {
@@ -273,5 +326,7 @@ namespace aihuhu.framework.data
                 }
             }
         }
+
+
     }
 }

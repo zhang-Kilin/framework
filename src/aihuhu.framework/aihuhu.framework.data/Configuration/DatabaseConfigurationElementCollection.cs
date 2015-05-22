@@ -9,7 +9,7 @@ namespace aihuhu.framework.data.Configuration
 {
     public class DatabaseConfigurationElementCollection : ConfigurationElementCollection
     {
-        public DatabaseConfigurationElement this[string name]
+        public new DatabaseConfigurationElement this[string name]
         {
             get
             {

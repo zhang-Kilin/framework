@@ -1,13 +1,14 @@
-﻿using aihuhu.framework.data.Configuration.CommandConfiguration;
+﻿using aihuhu.framework.Configuration;
+using aihuhu.framework.data.Configuration.CommandConfiguration;
 using aihuhu.framework.Utility;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ConfigurationErrorsException = System.Configuration.ConfigurationErrorsException;
 
 namespace aihuhu.framework.data.Configuration.Exports
 {
@@ -53,11 +54,11 @@ namespace aihuhu.framework.data.Configuration.Exports
             }
             if (string.IsNullOrWhiteSpace(databaseFilePath))
             {
-                throw new ConfigurationException("can not found databaseFilePath ,pls check your config file and find the element of 'aihuhu.framework.data'");
+                throw new ConfigurationErrorsException("can not found databaseFilePath ,pls check your config file and find the element of 'aihuhu.framework.data'");
             }
             if (string.IsNullOrWhiteSpace(commandFilePath))
             {
-                throw new ConfigurationException("can not found commandFilePath ,pls check your config file and find the element of 'aihuhu.framework.data'");
+                throw new ConfigurationErrorsException("can not found commandFilePath ,pls check your config file and find the element of 'aihuhu.framework.data'");
             }
 
             databaseFilePath = FileHelper.RootPath(databaseFilePath);
@@ -104,9 +105,9 @@ namespace aihuhu.framework.data.Configuration.Exports
 
         private static IDictionary<string, Database> InitDatabase()
         {
-            ExeConfigurationFileMap map = new ExeConfigurationFileMap();
+            System.Configuration.ExeConfigurationFileMap map = new System.Configuration.ExeConfigurationFileMap();
             map.ExeConfigFilename = m_DatabaseConfigFilePath;
-            System.Configuration.Configuration config = ConfigurationManager.OpenMappedExeConfiguration(map, ConfigurationUserLevel.None);
+            System.Configuration.Configuration config = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(map, System.Configuration.ConfigurationUserLevel.None);
             DatabaseConfigurationSection section = (DatabaseConfigurationSection)config.GetSection("database");
             IDictionary<string, Database> dic = new Dictionary<string, Database>(20);
             foreach (DatabaseConfigurationElement element in section.DatabaseCollection)

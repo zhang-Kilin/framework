@@ -9,6 +9,8 @@ namespace aihuhu.framework.data.Configuration.Exports
 {
     internal class Command : ICloneable
     {
+        private ParameterCollection m_Parameters = new ParameterCollection();
+
         public string Name
         {
             get;
@@ -27,6 +29,12 @@ namespace aihuhu.framework.data.Configuration.Exports
             internal set;
         }
 
+        public int CommandTimeout
+        {
+            get;
+            internal set;
+        }
+
         public string CommandText
         {
             get;
@@ -35,8 +43,14 @@ namespace aihuhu.framework.data.Configuration.Exports
 
         public ParameterCollection Parameters
         {
-            get;
-            internal set;
+            get
+            {
+                return m_Parameters;
+            }
+            internal set
+            {
+                this.m_Parameters = value ?? new ParameterCollection();
+            }
         }
 
         public object Clone()
@@ -45,6 +59,7 @@ namespace aihuhu.framework.data.Configuration.Exports
             {
                 CommandText = this.CommandText,
                 CommandType = this.CommandType,
+                CommandTimeout = this.CommandTimeout,
                 //database负责数据库连接，无需深度copy
                 Database = this.Database,
                 Name = this.Name,

@@ -80,6 +80,10 @@ namespace aihuhu.framework.data
             IDbCommand command = Create(databaseConfig);
             command.CommandText = commandConfig.CommandText;
             command.CommandType = commandConfig.CommandType;
+            if (commandConfig.CommandTimeout > 0)
+            {
+                command.CommandTimeout = commandConfig.CommandTimeout;
+            }
 
             if (commandConfig.Parameters != null
                 && commandConfig.Parameters.Count > 0)
@@ -88,7 +92,10 @@ namespace aihuhu.framework.data
                 {
                     Parameter p = commandConfig.Parameters[key];
                     IDbDataParameter param = command.CreateParameter();
-                    param.DbType = p.DbType;
+                    if (p.DbType.HasValue)
+                    {
+                        param.DbType = p.DbType.Value;
+                    }
                     param.ParameterName = FormatParameterName(p.Name);
                     if (p.Size > 0)
                     {

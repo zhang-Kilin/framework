@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace aihuhu.framework.data
 {
-    public interface IDataCommand:IDisposable
+    public interface IDataCommand : IDisposable, ICloneable
     {
         /// <summary>
         /// 指定连接超时时间
@@ -49,6 +49,7 @@ namespace aihuhu.framework.data
         DataSet ExecuteDataset();
 
 
+        void AddInParameter(string name, object value);
         void AddInParameter(string name, DbType dbType);
         void AddInParameter(string name, DbType dbType, int size);
         void AddInParameter(string name, DbType dbType, object value);
@@ -66,5 +67,10 @@ namespace aihuhu.framework.data
 
         object GetParameterValue(string name);
 
+        void RemoveParameter(string name);
+
+        void ClearParameter();
+
+        new IDataCommand Clone();
     }
 }

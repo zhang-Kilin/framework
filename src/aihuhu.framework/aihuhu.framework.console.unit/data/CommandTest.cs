@@ -15,7 +15,7 @@ namespace aihuhu.framework.console.unit.data
         [MethodTest]
         public void ExecuteReaderTest()
         {
-            DataCommand command = DataCommand.Create("UserCommand.QueryUserByUserName");
+            IDataCommand command = DataCommand.Create("UserCommand.QueryUserByUserName");
             command.SetParameterValue("UserName", "admin");
 
             using (IDataReader reader = command.ExecuteReader())
@@ -30,7 +30,7 @@ namespace aihuhu.framework.console.unit.data
         [MethodTest]
         public void ExecuteReaderOutputParameter()
         {
-            DataCommand command = DataCommand.Create("UserCommand.QueryByStatus");
+            IDataCommand command = DataCommand.Create("UserCommand.QueryByStatus");
             command.SetParameterValue("Status", "Normal");
             Stopwatch watch = new Stopwatch();
             watch.Start();

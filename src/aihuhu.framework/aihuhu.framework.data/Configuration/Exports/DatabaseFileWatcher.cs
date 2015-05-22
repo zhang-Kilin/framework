@@ -1,4 +1,5 @@
-﻿using System;
+﻿using aihuhu.framework.Utility;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,12 +14,16 @@ namespace aihuhu.framework.data.Configuration.Exports
 
         internal static void Watch(string filePath)
         {
-            string directory = Path.GetDirectoryName(filePath);
-            string fileName = Path.GetFileName(filePath);
-            FileSystemWatcher watcher = new FileSystemWatcher(directory,fileName);
-            watcher.EnableRaisingEvents = true;
-            watcher.Changed += watcher_Changed;
-            m_WatchList.Add(watcher);
+            if (string.IsNullOrWhiteSpace(AppDomain.CurrentDomain.SetupInformation.PrivateBinPath)
+                || !FileHelper.Contains(AppDomain.CurrentDomain.SetupInformation.PrivateBinPath, filePath))
+            {
+                string directory = Path.GetDirectoryName(filePath);
+                string fileName = Path.GetFileName(filePath);
+                FileSystemWatcher watcher = new FileSystemWatcher(directory, fileName);
+                watcher.EnableRaisingEvents = true;
+                watcher.Changed += watcher_Changed;
+                m_WatchList.Add(watcher);
+            }
         }
 
         static void watcher_Changed(object sender, FileSystemEventArgs e)

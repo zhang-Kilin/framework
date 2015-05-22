@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ConfigurationManager.cs" />
+    <Compile Include="Configuration\FrameworkSectionGroupConfiguration.cs" />
+    <Compile Include="Configuration\Provider.cs" />
+    <Compile Include="Configuration\ProviderConfigurationElement.cs" />
+    <Compile Include="Configuration\ProviderConfigurationSection.cs" />
     <Compile Include="Properties\framework.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
